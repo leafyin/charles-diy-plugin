@@ -1,19 +1,19 @@
 package com.xk72.charles.gui.transaction.popups;
 
 import com.xk72.charles.gui.find.AdvancedFindDialog;
-import com.xk72.charles.gui.session.popups.TransactionPopupMenu;
 import com.xk72.charles.gui.navigator.a;
+import com.xk72.charles.gui.session.popups.TransactionPopupMenu;
 import com.xk72.charles.gui.session.y;
 import com.xk72.charles.gui.transaction.actions.Base64DecodeAction$Text;
 import com.xk72.charles.gui.transaction.actions.Base64DecodeAction$TextComponent;
 import com.xk72.charles.gui.transaction.actions.CopyToClipboardAction$Text;
 import com.xk72.charles.gui.transaction.actions.CopyToClipboardAction$TextComponent;
 import com.xk72.charles.model.Transaction;
-import java.awt.Component;
-import java.awt.Point;
-import java.awt.event.MouseEvent;
-import javax.swing.JTable;
+
+import javax.swing.*;
 import javax.swing.text.JTextComponent;
+import java.awt.*;
+import java.awt.event.MouseEvent;
 
 public class TransactionViewerPopupMenu extends TransactionPopupMenu {
    public TransactionViewerPopupMenu(Transaction var1) {
@@ -33,7 +33,6 @@ public class TransactionViewerPopupMenu extends TransactionPopupMenu {
             if (var7 instanceof String) {
                this.add(new Base64DecodeAction$Text((String)var7, var2));
                this.add(new CharlesUrlDecodeText((String)var7, var2));
-               this.add(new BPDecodeText((String)var7, var2));
             }
 
             this.addSeparator();
@@ -42,7 +41,6 @@ public class TransactionViewerPopupMenu extends TransactionPopupMenu {
          this.add(new CopyToClipboardAction$TextComponent((JTextComponent)var2));
          this.add(new Base64DecodeAction$TextComponent((JTextComponent)var2));
          this.add(new CharlesUrlDecodeTextComponent((JTextComponent)var2));
-         this.add(new BPDecodeTextComponent((JTextComponent)var2));
          this.addSeparator();
       }
 

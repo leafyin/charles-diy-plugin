@@ -4,7 +4,7 @@ import com.xk72.charles.CharlesContext;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
 
 public abstract class CharlesUrlDecode extends AbstractAction {
 
@@ -24,7 +24,10 @@ public abstract class CharlesUrlDecode extends AbstractAction {
             if (sourceJson.contains(":") && sourceJson.contains("{")){
                 sourceJson = JsonUtils.getValueByJson(sourceJson);
             }
-            json = HttpUtils.doPost("http://49.232.170.172:8002/decodeJson", "{" + "\"code\"" + ":\"" + sourceJson + "\"}");
+            StringBuilder sb = new StringBuilder();
+            sb.append("{").append("\"code\"").append(":\"").append(sourceJson).append("\"}");
+            //这里是用接口访问的形式做的
+            json = HttpUtils.doPost("http://*.*.*.*:****/decodeJson", sb.toString());
             json = JsonUtils.formatJson(json);
         }catch (Exception e){
             CharlesContext.getInstance().error("Fail to json decode!");

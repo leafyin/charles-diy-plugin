@@ -1,6 +1,5 @@
 package com.xk72.charles.gui.transaction.popups;
 
-
 public class JsonUtils {
 
     public static String formatJson(String jsonStr) {
