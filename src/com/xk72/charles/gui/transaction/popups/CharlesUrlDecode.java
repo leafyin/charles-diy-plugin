@@ -18,22 +18,19 @@ public abstract class CharlesUrlDecode extends AbstractAction {
     protected abstract String getBody();
 
     public void actionPerformed(ActionEvent actionEvent) {
-        String json = "";
+        String json;
         try {
             String sourceJson = this.getBody();
             if (sourceJson.contains(":") && sourceJson.contains("{")){
                 sourceJson = JsonUtils.getValueByJson(sourceJson);
             }
-            StringBuilder sb = new StringBuilder();
-            sb.append("{").append("\"code\"").append(":\"").append(sourceJson).append("\"}");
             //这里是用接口访问的形式做的
-            json = HttpUtils.doPost("http://*.*.*.*:****/decodeJson", sb.toString());
+            json = HttpUtils.doPost("http://*.*.*.*:****/decodeJson", "{" + "\"code\"" + ":\"" + sourceJson + "\"}");
             json = JsonUtils.formatJson(json);
+            new ResultDialog(json);
         }catch (Exception e){
             CharlesContext.getInstance().error("Fail to json decode!");
         }
-
-        new ResultDialog(json);
     }
 
 }
