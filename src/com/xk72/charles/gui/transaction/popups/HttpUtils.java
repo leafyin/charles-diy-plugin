@@ -29,7 +29,7 @@ public class HttpUtils {
             if (connection.getResponseCode() == 200) {
                 is = connection.getInputStream();
                 // 封装输入流is，并指定字符集
-                br = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+                br = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
                 // 存放数据
                 StringBuilder sbf = new StringBuilder();
                 String temp = null;
@@ -57,7 +57,8 @@ public class HttpUtils {
                     e.printStackTrace();
                 }
             }
-            connection.disconnect();// 关闭远程连接
+            // 关闭远程连接
+            connection.disconnect();
         }
         return result;
     }
@@ -132,12 +133,6 @@ public class HttpUtils {
             connection.disconnect();
         }
         return result;
-    }
-
-    public static void main(String[] args){
-        String param = "";
-        String a = doGet("http://test-u-bmsrf.tt.cn/login/main_login/jiemi1?params=" + param);
-        System.out.println(a);
     }
 
 }
