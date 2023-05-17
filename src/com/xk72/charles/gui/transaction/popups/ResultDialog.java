@@ -103,7 +103,7 @@ public class ResultDialog extends JFrame implements ActionListener {
             DefaultHighlighter.DefaultHighlightPainter painter = new DefaultHighlighter.DefaultHighlightPainter(Color.RED);
             highlighter.removeAllHighlights();
             int index = 0,length;
-            //在一段内容中标记出搜索到的内容
+            // 在一段内容中标记出搜索到的内容
             while ((index = text.indexOf(findText,index)) >= 0){
                 try{
                     length = findText.length();

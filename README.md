@@ -202,7 +202,7 @@ public class Base64DecodeAction$TextComponent extends Base64DecodeAction {
                }
                StringBuilder sb = new StringBuilder();
                sb.append("{").append("\"code\"").append(":\"").append(sourceJson).append("\"}");
-               json = HttpUtils.doPost("http://49.232.170.172:8002/decodeJson", sb.toString());
+               json = HttpUtils.doPost("http://*.*.*.*:****/decodeJson", sb.toString());
                json = JsonUtils.formatJson(json);
            }catch (Exception e){
                CharlesContext.getInstance().error("Fail to json decode!");
@@ -375,7 +375,6 @@ jar -uf ./charles.jar com/xk72/charles/gui/transaction/popups/CharlesUrlDecodeTe
 jar -uf ./charles.jar com/xk72/charles/gui/transaction/popups/TransactionViewerPopupMenu.class
 jar -uf ./charles.jar com/xk72/charles/gui/transaction/popups/CharlesUrlDecodeTextComponent.class
 jar -uf ./charles.jar com/xk72/charles/gui/transaction/popups/HttpUtils.class
-jar -uf ./charles.jar com/xk72/charles/gui/transaction/popups/FileUtils.class
 jar -uf ./charles.jar com/xk72/charles/gui/transaction/popups/JsonUtils.class
 jar -uf ./charles.jar com/xk72/charles/gui/transaction/popups/ResultDialog.class
 ```

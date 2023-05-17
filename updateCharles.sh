@@ -5,6 +5,5 @@ jar -uf E:/charles.jar com/xk72/charles/gui/transaction/popups/CharlesUrlDecodeT
 jar -uf E:/charles.jar com/xk72/charles/gui/transaction/popups/TransactionViewerPopupMenu.class
 jar -uf E:/charles.jar com/xk72/charles/gui/transaction/popups/CharlesUrlDecodeTextComponent.class
 jar -uf E:/charles.jar com/xk72/charles/gui/transaction/popups/HttpUtils.class
-jar -uf E:/charles.jar com/xk72/charles/gui/transaction/popups/FileUtils.class
 jar -uf E:/charles.jar com/xk72/charles/gui/transaction/popups/JsonUtils.class
 jar -uf E:/charles.jar com/xk72/charles/gui/transaction/popups/ResultDialog.class
