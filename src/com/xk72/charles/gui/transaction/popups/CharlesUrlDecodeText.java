@@ -7,7 +7,7 @@ public class CharlesUrlDecodeText extends CharlesUrlDecode{
     private final String text;
 
     public CharlesUrlDecodeText(String str){
-        super((Component)null);
+        super(null);
         this.text = str;
     }
 
