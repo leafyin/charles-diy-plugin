@@ -19,36 +19,47 @@ public class JsonUtils {
             last = current;
             current = jsonStr.charAt(i);
             switch (current) {
-                case '"' -> {
+                case '"':
                     if (last != '\\') {
                         isInQuotationMarks = !isInQuotationMarks;
                     }
                     sb.append(current);
-                }
-                case '{', '[' -> {
+                case '{':
                     sb.append(current);
                     if (!isInQuotationMarks) {
                         sb.append('\n');
                         indent++;
                         addIndentBlank(sb, indent);
                     }
-                }
-                case '}', ']' -> {
+                case '[':
+                    sb.append(current);
+                    if (!isInQuotationMarks) {
+                        sb.append('\n');
+                        indent++;
+                        addIndentBlank(sb, indent);
+                    }
+                case '}':
                     if (!isInQuotationMarks) {
                         sb.append('\n');
                         indent--;
                         addIndentBlank(sb, indent);
                     }
                     sb.append(current);
-                }
-                case ',' -> {
+                case ']':
+                    if (!isInQuotationMarks) {
+                        sb.append('\n');
+                        indent--;
+                        addIndentBlank(sb, indent);
+                    }
+                    sb.append(current);
+                case ',':
                     sb.append(current);
                     if (last != '\\' && !isInQuotationMarks) {
                         sb.append('\n');
                         addIndentBlank(sb, indent);
                     }
-                }
-                default -> sb.append(current);
+                default:
+                    sb.append(current);
             }
         }
         return sb.toString();

@@ -16,31 +16,30 @@ public class ResultDialog extends JFrame implements ActionListener {
     private static String searchHistory = "";
 
     public static void main(String[] args) {
-        new ResultDialog("""
-                {
-                    "name": "中国",
-                    "province": [{
-                        "name": "黑龙江",
-                        "cities": {
-                            "city": ["哈尔滨", "大庆"]
-                        }
-                    }, {
-                        "name": "广东",
-                        "cities": {
-                            "city": ["广州", "深圳", "珠海"]
-                        }
-                    }, {
-                        "name": "台湾",
-                        "cities": {
-                            "city": ["台北", "高雄"]
-                        }
-                    }, {
-                        "name": "新疆",
-                        "cities": {
-                            "city": ["乌鲁木齐"]
-                        }
-                    }]
-                }""");
+        new ResultDialog("{\n" +
+                "                    \"name\": \"中国\",\n" +
+                "                    \"province\": [{\n" +
+                "                        \"name\": \"黑龙江\",\n" +
+                "                        \"cities\": {\n" +
+                "                            \"city\": [\"哈尔滨\", \"大庆\"]\n" +
+                "                        }\n" +
+                "                    }, {\n" +
+                "                        \"name\": \"广东\",\n" +
+                "                        \"cities\": {\n" +
+                "                            \"city\": [\"广州\", \"深圳\", \"珠海\"]\n" +
+                "                        }\n" +
+                "                    }, {\n" +
+                "                        \"name\": \"台湾\",\n" +
+                "                        \"cities\": {\n" +
+                "                            \"city\": [\"台北\", \"高雄\"]\n" +
+                "                        }\n" +
+                "                    }, {\n" +
+                "                        \"name\": \"新疆\",\n" +
+                "                        \"cities\": {\n" +
+                "                            \"city\": [\"乌鲁木齐\"]\n" +
+                "                        }\n" +
+                "                    }]\n" +
+                "                }");
     }
 
     /**
